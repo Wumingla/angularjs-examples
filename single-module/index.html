@@ -2,6 +2,10 @@
     <head></head>
     <body ng-controller='TextController'>
         <p ng-bind='someText.message'></p>
+        <form ng-controller='StartUpController'>
+            Starting: <input ng-model='funding.startingEstimate' /><br />
+            Recommendation: {{funding.needed}}
+        </form>
         <script type="text/javascript" src='../../angular.js'></script>
         <script type="text/javascript">
             var myAppModule = angular.module('myApp', [])
@@ -9,6 +13,14 @@
                 var someText = {};
                 someText.message = 'You have started your journey.';
                 $scope.someText = someText;
-            })
+            });
+
+            myAppModule.controller('StartUpController', function($scope) {
+                $scope.funding = { startingEstimate: 0 };
+                var computeNeeded = function() {
+                    $scope.funding.needed = $scope.funding.startingEstimate * 10;
+                };
+                $scope.$watch('funding.startingEstimate', computeNeeded);
+            });
         </script>
     </body>
