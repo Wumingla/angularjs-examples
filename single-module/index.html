@@ -2,9 +2,13 @@
     <head></head>
     <body ng-controller='TextController'>
         <p ng-bind='someText.message'></p>
-        <form ng-controller='StartUpController'>
-            Starting: <input ng-model='funding.startingEstimate' /><br />
-            Recommendation: {{funding.needed}}
+        <form ng-controller='StartUpController' ng-submit='requestFunding()'>
+            <p>
+                Starting: <input ng-model='funding.startingEstimate' /><br />
+                Recommendation: {{funding.needed}}
+            </p>
+            <button>Fund my startup!</button>
+            <button ng-click='reset()'>Reset</button>
         </form>
         <script type="text/javascript" src='../../angular.js'></script>
         <script type="text/javascript">
@@ -21,6 +25,13 @@
                     $scope.funding.needed = $scope.funding.startingEstimate * 10;
                 };
                 $scope.$watch('funding.startingEstimate', computeNeeded);
+                $scope.requestFunding = function() {
+                    window.alert('Sorry, please get more customers first.');
+                };
+                $scope.reset = function() {
+                    $scope.funding.startingEstimate = 0;
+                }
             });
         </script>
     </body>
+</html>
