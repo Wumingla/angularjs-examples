@@ -1,7 +1,7 @@
 <html ng-app='myApp'>
     <head></head>
     <body ng-controller='TextController'>
-        <p>{{someText.message}}</p>
+        <p ng-bind='someText.message'></p>
         <script type="text/javascript" src='../../angular.js'></script>
         <script type="text/javascript">
             var myAppModule = angular.module('myApp', [])
