@@ -1,0 +1,15 @@
+<html lang='en' ng-app='app'>
+    <head><title></title></head>
+    <body ng-controller='SomeController'>
+        <button ng-click='clickUnfocused()'>
+            Not focused
+        </button>
+        <button ngbk-focus ng-click='clickFocused()'>
+            I'm very focused!
+        </button>
+        <div>{{message.text}}</div>
+        <script type="text/javascript" src='../../angular.js'></script>
+        <script type="text/javascript" src='directives.js'></script>
+        <script type="text/javascript" src='controller.js'></script>
+    </body>
+</html>
