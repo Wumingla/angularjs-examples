@@ -1,0 +1,3 @@
+[submodule "angularjs-book"]
+	path = angularjs-book
+	url = https://github.com/shyamseshadri/angularjs-book
