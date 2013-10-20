@@ -1,0 +1,32 @@
+<html ng-app='ShoppingModule'>
+    <head>
+        <title>Your Shopping Cart</title>
+    </head>
+    <body ng-controller='ShoppingController'>
+        <h1>Shop!</h1>
+        <table>
+            <tr ng-repeat='item in items'>
+                <td>{{item.title}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.price | currency}}</td>
+            </tr>
+        </table>
+        <script src='../../angular.js'></script>
+        <script type="text/javascript">
+            var ShoppingModule = angular.module('ShoppingModule', []);
+            ShoppingModule.factory('Items', function() {
+                var items = {};
+                items.query = function() {
+                    return [
+                        {title: 'Paint pots', description: 'Pots full of paint', price: 3.95},
+                        {title: 'Polka dots', description: 'Dots with polka', price: 2.95},
+                        {title: 'Pebbles', description: 'Just little rocks', price: 6.95}
+                    ];
+                };
+                return items;
+            });
+            ShoppingModule.controller('ShoppingController', function($scope, Items) {
+                $scope.items = Items.query();
+            });
+        </script>
+    </body>
