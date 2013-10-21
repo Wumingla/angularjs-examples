@@ -1,0 +1,8 @@
+<h3>List users</h3>
+<ul>
+    <li ng-repeat='user in users'>
+        <a href='#/{{user.id}}'>{{user.id}}</a>: {{user.name}}
+        <a href='#/edit/{{user.id}}'>Edit</a>
+    </li>
+</ul>
+<p><a href='#/new'>Create new user</a></p>

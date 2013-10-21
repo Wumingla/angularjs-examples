@@ -1,0 +1,11 @@
+<h3>New User</h3>
+<form name='newForm' ng-submit='save()'>
+    <p>
+        <label for='user_name'>Name: </label>
+        <input ng-model='user.name' id='user_name' ng-minlength='3' required />
+    </p>
+    <p>
+        <button ng-disabled='newForm.$invalid'>Save</button>
+    </p>
+</form>
+<p><a href='#/'>Back</a></p>

@@ -1,0 +1,12 @@
+<h3>Edit User</h3>
+<form name='editForm' ng-submit='save()'>
+    <p>
+        <label for='user_name'>Name: </label>
+        <input ng-model='user.name' id='user_name' ng-minlength='3' required />
+    </p>
+    <p>
+        <button ng-disabled='editForm.$invalid'>Update</button>
+        <button ng-click='remove()'>Delete</button>
+    </p>
+</form>
+<p><a href='#/'>Back</a></p>
